@@ -36,9 +36,9 @@ func calculateTotalWithTax(_ subtotal : Double, _ tax : Double) -> Double{
 }
 
 
+print("week 07 answers : ")
 goodMorning()
-
-let num = 1.0
+let num = 5.0
 printTotalWithTax(num)
 print(getTotalWithTax(num))
 print(calculateTotalWithTax(num, 1 + tax))
