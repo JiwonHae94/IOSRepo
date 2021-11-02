@@ -36,7 +36,7 @@ func calculateTotalWithTax(_ subtotal : Double, _ tax : Double) -> Double{
 }
 
 
-print("week 07 answers : ")
+print("\n\nweek 07 answers : ")
 goodMorning()
 let num = 5.0
 printTotalWithTax(num)
@@ -44,4 +44,25 @@ print(getTotalWithTax(num))
 print(calculateTotalWithTax(num, 1 + tax))
 
 
+print("\n\nweek 08 answers : ")
+struct Car{
+    private var make, model, year, details: String
+    
+    init(
+        _ make : String,
+        _ model : String,
+        _ year : String
+    ){
+        self.make = make
+        self.model = model
+        self.year = year
+        self.details = "\(year) \(make) \(model)"
+    }
+    
+    func getDetails() -> String{
+        return details
+    }
+}
 
+let camry = Car("Toyota", "Camry", "1999")
+print(camry.getDetails())
