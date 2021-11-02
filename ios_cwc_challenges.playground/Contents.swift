@@ -66,3 +66,40 @@ struct Car{
 
 let camry = Car("Toyota", "Camry", "1999")
 print(camry.getDetails())
+
+print("\n\nweek 09 answers : ")
+struct TaxCalculator{
+    private var tax : Int
+    
+    init(_ tax : Int){
+        self.tax = tax
+    }
+    
+    func totalWithTax(_ n : Double) -> Double{
+        return n * (Double(tax)/100.0 + 1)
+    }
+}
+
+struct BillSplitter{
+    private let taxCalculator:TaxCalculator
+    
+    init(_ tax : Int){
+        self.taxCalculator = TaxCalculator(tax)
+    }
+    
+    func splitBy(
+        _ subtotal : Double,
+        _ numPeople : Int
+    ) -> Double {
+        
+        let temp = self.taxCalculator.totalWithTax(subtotal)
+        
+        print(temp, subtotal)
+        
+        return taxCalculator.totalWithTax(subtotal) / Double(numPeople)
+    }
+}
+
+let billSplitter = BillSplitter(10)
+let ans = billSplitter.splitBy(120, 5)
+print(ans)
